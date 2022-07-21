@@ -1,0 +1,175 @@
+AMAZON WEB SERVICES (AWS) :: AWS Course Curriculum
+--------------------------------------------------
+Note: Each lecture will be followed by a hands-on demo/activity wherever applicable 
+
+Introduction to Cloud Computing: 
+  •	Introduction to Cloud Computing 
+  •	Introduction to AWS Services 
+  •	Type of Cloud computing models 
+  •	IAAS Overview 
+  •	PAAS Overview 
+  •	SAAS Overview 
+  •	Creating an AWS Account & troubleshooting
+ 
+Elastic Compute Cloud Essentials 
+  •	AWS Global Infrastructure 
+  •	AWS Cloud Overview - Regions & AZ
+  •	AMIs (Amazon Machine Images) 
+  •	EC2 Instances on-demand, spot instances, reserved instances & dedicated instances 
+ 
+Networking Concepts 
+  •	Understanding networking in virtual world and sub netting. 
+  •	Preparatory Topics Virtualization, Networking and Storage concepts 
+  •	AWS Management Console and AWS Account. 
+ 
+VPC 
+  •	Public & Private Subnets 
+  •	VPCs Basics 
+  •	Network Access Control Lists 
+  •	Security Groups, Internet Gateways 
+  •	NAT Gateways 
+  •	EndPoints 
+  •	Creating Route Tables 
+  •	Launch EC2 Servers using VPCs 
+  •	Networking Costs in AWS
+  •	Peering Connection with Inter Regions & Intra Regions 
+ 
+Hands-on activity: Creating a VPC, creating instances (VMs) on EC2 and configuring all necessary services, attaching EBS volumes, Elastic IPs, etc. 
+ 
+Amazon Elastic Compute Cloud(EC2) 
+  •	What is Amazon EC2 
+  •	Features of Amazon EC2 
+  •	Managing the EC2 infrastructure 
+  •	EC2 Dashboard 
+  •	Pricing for Amazon EC2 
+  •	Creating AMI using EC2 Instance 
+  •	Amazon Machine Images (AMIs) 
+  •	Creating EC2 User Data to bootstrap
+  •	Security Groups Hands On 
+  •	EC2 Instances Launch Types Hands On
+  •	Private vs Public vs Elastic IP Hands On
+  •	Elastic Network Interfaces (ENI) - Hands On
+  •	EBS & Snapshot
+  •	EFS vs EBS
+
+S3 Storage 
+ 
+  •	What is object storage? 
+  •	Data as objects 
+  •	Creating and deleting buckets
+  •	Life cycle of S3 
+  •	Managing Buckets. 
+  •	Creating a Static website using S3 storage 
+  •	S3 Replication (Cross Region and Same Region)
+  •	S3 Storage Classes + Glacier - Hands On
+  •	S3 Lifecycle Rules - Hands On
+  •	All AWS Storage Options Compared
+
+Hands-on activity: Creating S3 buckets, putting and getting objects from S3, hosting a static website on S3 
+ 
+IAM (Identity & Access Management) 
+  •	IAM Features 
+  •	Getting Started with IAM  
+  •	Creating of user, groups, roles 
+  •	Managing & Assigning Policies 
+  •	Creating Customizing Policies 
+  •	IAM Console and the Sign-in Page 
+  •	Configuring IAM users, groups and policies Secret Keys and API Access 
+  •	Creating & Implementation of Custom Policies on IAM users. 
+  •	Setting up Multi Factor Authentication (MFA) 
+  •	Importance & usage of Access key & Secret Key 
+  •	AWS CLI Setup & AWS Cloud Shell 
+ 
+Route 53 
+  •	Domain Registration 
+  •	DNS Configuration 
+  •	Route 53 Health Checks 
+  •	Latency based Routing 
+  •	Weighted Routing Policies 
+  •	Working with Hosted Zones 
+  •	Change reference to meet CName, Alias etc. 
+  •	Migrating DNS Service for an existing domain to Route53 
+ 
+Load Balancing & Auto Scaling 
+  •	What is load balancer 
+  •	Creating a load balancer. 
+  •	Load Balancer Protocols 
+  •	Security groups for the load balancer 
+  •	Health Check for the load balancer 
+  •	What is Auto Scaling
+  •	Amazon NLB, ALB and Gateway Load Balancer 
+  •	Amazon Auto-scaling Launch Configurations, Auto-scaling Policies 
+  •	Auto Scaling Groups – for Solutions Architects
+ 
+Hands-on activity: configuration of NLB, ALB, auto-scaling rules and using them to automatically scale EC2 instances  
+
+EBS (Elastic Block Storage) 
+  •	Creating and deleting extra volume 
+  •	Attach extra volumes to EC2 instances 
+  •	Attach and Detach volumes and increase the volume size 
+  •	Mounting & Un-mounting the attached volume • Creating Snapshots 
+
+Relational Database Services (RDS) 
+  •	RDS Essentials 
+  •	Launching RDS Instance 
+  •	RDS Encryption + Security
+  •	Configuring the Database Engine 
+  •	Managing RDS Database 
+  •	Authorizing access to DB. 
+  •	AWS Database services overview RDS, Elasticache. 
+  •	Aurora - Advanced Concepts
+ 
+Hands-on activity: creating RDS instances, configuring Multi-AZ failover, accessing a database hosted on RDS,  
+
+Cloud Formation 
+  •	Building AWS Infrastructure as a Code (IAAC) 
+  •	Create a sample infrastructure using existing templates 
+  •	Introduction to JSON 
+  •	How to read and customize the infrastructure code. 
+  
+Cloud Watch 
+  •	Monitoring the AWS service Health Dashboard 
+  •	Setting up notifications
+  
+Simple Notification Service(SNS) 
+  •	Creation of Topic 
+  •	Subscriptions 
+  •	Notifications through email 
+  
+Simple Email Service (SES) 
+  •	Email Services 
+  •	SMTP Services 
+  
+Simple Queue Service(SQS) 
+  •	Creation of Queue 
+  •	Sending messages to the queue 
+  •	Setting SNS to SQS 
+  •	Retrieving messages from SQS 
+  •	Kinesis Data Streams Hands On
+
+CloudFront & AWS Global Accelerator
+  •	CloudFront Signed URL / Cookies
+  •	AWS Global Accelerator – Overview
+
+Containers on AWS: ECS, Fargate, ECR & EKS
+  •	ECS Services & Tasks, Load Balancing
+  •	EKS Overview
+
+Serverless Overviews from a Solution Architect Perspective
+  •	Lambda Hands-On
+  •	API Gateway Hands-On
+  •	DynamoDB Hands-On
+  •	AWS Cognito Hands-On
+  •	Serverless Application Model (SAM) Overview
+  •	MicroServices Architecture
+
+AWS Security & Encryption: KMS, SSM Parameter
+  •	AWS Secrets Manager
+  •	WAF & Shield - Hands On
+  •	KMS & SM Parameter Store Overview
+
+Disaster Recovery & Migrations
+  •	Transferring Large Datasets into AWS using DMS
+  •	AWS Backup - Hands On
+  
+Completion of AWS Certified Solutions Architect Associate
