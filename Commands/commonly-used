@@ -1,0 +1,203 @@
+Basic Linux Commands:
+=====================
+ls - List Directories Content (in windows we call these as a folders)
+cd - Changes the current directories
+pwd - Displays the present working directory
+cat - Concatenates and display files
+echo - Display Arguments to the Screen
+man - Display the Manual (and this can be used with specific commands to show the manual for them)
+exit - Exit the shell or your current Session
+which - locate a command by searching the directories specified by the environmental variable PATH (see Below) [whichis] -- which ls
+clear - Clears the Screen
+
+What are Environment Variables and what is $PATH?
+Environment variables are a set of dynamic named values, stored within the system that are used by applications launched in shells. There are systemwide and User-Defined Variables.
+example on the systemwide Variables is $PATH ,where $PATH is an environment variable specifying where executable programs are located.
+
+Working with Directories - Linux Special Directories:
+=====================================================
+. - The Current Directory
+.. - The Parent Directory
+/ - The Root Directory
+~ - The Current User's Home Directory
+
+Absolute Path vs Relative Path:
+===============================
+Absolute path is defined as specifying the location of a file or directory from the root directory (/).
+Relative path is defined as the path related to the present working directly.
+
+Directories Commands:
+====================
+cd - change directory to 
+cd .. - change directory to the parent directory (cd ../..)
+cd - - change directory to the previous Directory (works like 2 directories back)
+pwd - Print Working Directory (Full Absolute Path)
+mkdir - Make a new directory
+mkdir -p - Make a new directory (with -p parent) as if parent doesn't exist create as well ( mkdir dir1/dir2)
+rmdir - remove a directory (can’t delete a non-empty directory)
+rmdir -p - remove a directory (with -p parent) as delete with parent as well (rmdir -p dir1/dir2)
+rm -rf - remove a directory (using the rm command with recursive and force options)
+
+Listing Commands:
+=================
+ls - list Files
+ls -l - list Files with Long List Format
+ls -t - list Files with sorting Last Modified time
+ls -h - list Files with Human readable format (1000 = 1K)
+ls -a - list All Files (hidden included) Hidden Files start with Dot (.) --> e.g: .ssh
+ls -laht - list All Files (hidden included) and sort Last Modified time and with Human readable with Long List Format.
+ls -i
+
+Hard links Vs Symbolic links:
+============================
+Hard links and symbolic links are two different methods to refer to a file in the hard drive.Hard link is essentially a synced carbon copy of a file that refers directly to the inode of a file.
+Symbolic links on the other hand refer directly to the file which refers to the inode, (the same as Shortcut in Windows).
+
+ln - create a hard link
+ln -s - create a symbolic (Soft) link (the same as Shortcuts in Windows)
+
+What is inode ?
+inode (index node) is a data structure in a Unix-style file system that describes a file-system object such as a file or a directory. Each inode stores the attributes and disk block locations of the object's data. File-system object attributes may include metadata (times of last change, access, modification), as well as owner and permission data.
+
+File and Directory Permissions:
+===============================
+After executing the command ls -l 
+drwx------ 35 ubuntu ubuntu 1120 Dec 27 19:54 Desktop
+-rwxrw-r-- 65 ubuntu ubuntu 1120 Dec 28 18:36 test.txt
+lrwxr-x--- 65 ubuntu ubuntu 1120 Dec 28 18:36 file.lnk
+
+we have three different types of file and the symbols (d , - , l)
+
+d - Directory
+- - Regular File
+l - Link (symbolic Links)
+b - Binary file
+
+also we have three different Permissions and the symbols (r , w , x)
+r - Read Permission
+w - Write Permission
+x - Execute Permission
+
+Permission File Directory
+
+r (4 as binary) Allows files to be read allows files inside directory to be read
+w (2 as binary) Allows files to be modified allows entries inside directory to be modified
+x (1 as binary) Allows files to be executed allows us to go inside directory (using cd command)
+
+Permissions Categories:
+
+u - User
+g - Group
+o - Other
+a - All
+
+ls -l - list Files with Long List Format
+chmod - change mode of file or Directory
+chmod 777 - change mode of file or Directory
+chmod ugo=rwx - change mode of file or Directory
+chmod 0777 Don’t set Special Permission
+chmod 4777 put SetUID permission
+chmod 2777 put SetGID
+chmod 1777 put sticky bit
+
+id - print real and effective user and group IDs
+
+groups - print the groups a user is in
+chown - change file owner and group
+chgrp - change group ownership
+
+Linux Special Permissions :
+===========================
+These permissions allow the file being executed to be executed with the privileges of the owner or the group owner as well.
+
+s or S instead of x bit
+s == file/Directory already has x bit
+S == file/Directory Doesn't has x bit (executable not allowed or set)
+t or T instead of x bit
+t == Directory already has x bit
+T == Directory Doesn't has x bit (executable not allowed or set)
+ 
+
+Three special permissions: SUID(setuid) , SGID (setgid) and sticky bit:
+=======================================================================
+SUID: is a special permission assigned to a file. These permissions allow the file being executed to be executed with the privileges of the owner. For example, if a file was owned by the root user and has the setuid bit set, no matter who executed the file it would always run with root user privileges.
+SGID: When the Set Group ID bit is set, the executable is run with the authority of the group. For example, if a file was owned by the users’ group, no matter who executed that file it would always run with the authority of the user’s group.
+sticky bit: When the sticky bit is set on a directory, only the root user, the owner of the directory, and the owner of a file can remove files within said directory.
+[dir1 with -x permission -- > chmod a+t dir1 -- > chmod o+x dir1/ -- > ]
+
+chmod 0777 - Full permission but with no special Permission
+chmod 4777 - Full permission but with setuid bit
+chmod 2777 - Full permission but with setgid bit
+chmod 1777 - Full permission but with sticky bit
+chmod ugo+s - (s ) increase the Special Permission (setuid , setgid )
+chmod ugo+t - (t) increase the Special Permission (sticky bit)
+[ls -l file1.sh(file with +x permission) -- > chmod a+s file1.sh -- > chmod a-x file1.sh]
+
+Finding Files and Directories:
+==============================
+ find <path> -name <content>
+ find . -name t.txt
+ find . -iname T.txt [-ls]
+ wild card search -- > find . -iname T.txt -exec ls -l  {} \:
+
+Locate command:
+===============
+cp t.txt /temp/ -- > locate t.txt -- > updatedb -- > 
+
+Viewing Files and the Nano Editor:
+==================================
+cat t.tx - display the content of the t.txt file
+more t.txt - Browse through the t.txt file
+less t.tx - with Features more than more command
+head t.tx - Output the beginning of the t.txt file
+head -15 t.tx - Output the beginning of the t.txt file First 15 Lines
+tail t.tx - Output the ending of the t.txt file
+tail -15 t.tx - Output the ending of the t.txt file Last 15 Lines
+tail -f t.tx - Output the ending of the t.txt file as it is being written to 
+eg : more /var/log/auth.log
+
+Editing Files in Vi/Vim:
+========================
+vi vs vim vs view :
+Vi stands for Visual. It is a text editor that is an early attempt to a visual text editor.
+Vim stands for Vi IMproved. It is an implementation of the Vi standard with many additions
+View stars Vim with Real-only mode
+
+Most Important Vi / Vim Shortcuts We Will Use :
+
+^ (shift + 6) - Go to the Beginning of the line
+$ (shift + 4) - Go to the End of the line
+i - insert at the cursor position
+I (shift + i) - insert at the beginning of the line
+a - append after the cursor position
+A (shift + a) - append at the end of the line
+o - insert a new empty line below the cursor position
+:w - writes (saves) the file
+:w! - Forces the file to be saved
+:q - Quit
+:q! - quit without saving any thing
+:wq - Write and Quit
+:wq! - Write and Quit Forcefully
+:x - same as :wq
+:n - Positions the cursor at line n (e.g: :1 , :4 , :146)
+:$ - Positions the cursor at the last line
+gg - Positions the cursor at the First line of the file
+G (shift + g) - Positions the cursor at the last line of the file
+:set nu - Turn on line numbering
+:set nonu - Turn off line numbering
+:help [subcommand] - get help for that subcommand
+v - Visual Selection
+y (stands for yank) - copy
+d (stands for delete) - Cut
+p - Paste
+yy - copy the current line (use without v)
+u - Undo
+
+/<Pattern> - to search for the specified Pattern
+n - after typing enter for the /<Pattern> then n will search for the next
+N - after typing enter for the /<Pattern> then N will search for the Previous
+
+Linux Comparing Files:
+======================
+sdiff  <file1.txt> <file2.txt>
+
