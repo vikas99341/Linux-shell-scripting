@@ -1,0 +1,39 @@
+Command Mode:
+dd	- 	to delete the current line
+cc	-	to cut the current line
+yy	-	to copy the current line
+p	- 	to paste the line(s) below the current line
+P	-	to paste the line(s) above the current line
+
+dw	-	to delete a word
+yw	-	to copy a word
+cw 	-	to cut a word
+
+dl	-	to delete a character
+x	-	to delete a character
+yl	-	to copy a character
+cl	-	to cut a character
+
+ndd	-	to delete 'n' no. of consequtive lines 
+nyy	-	to copy 'n' no. of consequtive lines
+ncc	-	to cut 'n' no. of consequtive lines
+nx 	-	to delete 'n' no. of consequtive characters
+
+h	-	to move left
+j	-	to move down
+k	-	to move up
+l	-	to move right
+
+G	-	to move the cursor to the last line of the file
+nG	- 	to move the cursor to the nth line of the file
+u	-	to undo 
+R	-	to redo
+r	-	to replace a single character
+
+Insert Mode:(to get into the insert mode)
+i	-	without changing cursor's position
+a	-	moves the cursor one character forward
+A	- 	moves the cursor to the end of the current line
+o	-	create a new line below the cursor's current line
+O	-	create a new line above the cursor's current line
+
